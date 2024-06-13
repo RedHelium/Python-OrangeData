@@ -4,7 +4,14 @@
 
 Python integration for OrangeData service
 
-Актуальная версия библиотеки: `2.1.1`
+Актуальная версия библиотеки: `2.1.2`
+
+## Изменения
+
+- Версия 2.1.2
+    - Исправлена проверка максимальной длины идентификтатора документа с 32 до 36 символов.
+    - Правки в примере в README
+
 
 ##### Использование:
 * создать объект класса `OrangeDataClient`
@@ -14,7 +21,7 @@ from client import OrangeDataClient
 params = {
     'inn': '3123011520',
     'api_url': 'https://apip.orangedata.ru:2443',
-    'sign_pkey': 'private_key.pem',
+    'sign_private_key': 'private_key.pem',
     'client_key': 'client.key',
     'client_cert': 'client.crt',
 }
