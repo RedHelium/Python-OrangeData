@@ -41,7 +41,7 @@ class OrangeDataClient(object):
     def create_order(self, id_, type_, customer_contact, taxation_system, group=None, key=None):
         """
         Создание чека
-        :param id_: Идентификатор документа (Строка от 1 до 32 символов)
+        :param id_: Идентификатор документа (Строка от 1 до 36 символов)
         :param type_: Признак расчета, 1054 (Число от 1 до 4):
             1 - Приход
             2 - Возврат прихода
@@ -500,11 +500,11 @@ class OrangeDataClient(object):
     def get_order_status(self, id_):
         """
         Проверка состояния чека
-        :param id_: Идентификатор документа (Строка от 1 до 32 символов)
+        :param id_: Идентификатор документа (Строка от 1 до 36 символов)
         :type id_: str
         :return:
         """
-        if not length_is_valid(id_, 1, 32):
+        if not length_is_valid(id_, 1, 36):
             raise OrangeDataClientValidationError('Invalid order identifier')
 
         url = urllib.parse.urljoin(
@@ -522,7 +522,7 @@ class OrangeDataClient(object):
                           key=None):
         """
         Создание чека-коррекции
-        :param id_: Идентификатор документа (Строка от 1 до 32 символов)
+        :param id_: Идентификатор документа (Строка от 1 до 36 символов)
         :param correction_type: 1173, тип коррекции (Число):
             0 - Самостоятельно
             1 - По предписанию
@@ -646,11 +646,11 @@ class OrangeDataClient(object):
     def get_correction_status(self, id_):
         """
         Проверка состояния чека-коррекции
-        :param id_: Идентификатор документа (Строка от 1 до 32 символов)
+        :param id_: Идентификатор документа (Строка от 1 до 36 символов)
         :type id_: str
         :return:
         """
-        if not length_is_valid(id_, 1, 32):
+        if not length_is_valid(id_, 1, 36):
             raise OrangeDataClientValidationError('Invalid order identifier')
 
         url = urllib.parse.urljoin(
